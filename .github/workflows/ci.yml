@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        racket-version: ["9.0", "9.3"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: Bogdanp/setup-racket@v1.15
+        with:
+          version: ${{ matrix.racket-version }}
+      - name: Install package
+        run: raco pkg install --auto --no-docs --name switchboard "${{ github.workspace }}"
+      - name: Compile
+        run: raco make switchboard/main.rkt switchboard-doc/scribblings/switchboard.scrbl
+      - name: Test
+        run: raco test -p switchboard
+
+  quality:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: Bogdanp/setup-racket@v1.15
+        with:
+          version: "9.3"
+      - name: Install package with documentation
+        run: raco pkg install --auto --name switchboard "${{ github.workspace }}"
+      - name: Check declared package dependencies
+        run: raco setup --check-pkg-deps switchboard
+      - name: Build reference manual
+        run: raco scribble --htmls --dest "${{ runner.temp }}/switchboard-doc" switchboard-doc/scribblings/switchboard.scrbl
+      - name: Require a clean generated tree
+        run: git diff --exit-code
