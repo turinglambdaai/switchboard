@@ -2,7 +2,7 @@
 
 ## Scope
 
-Switchboard is the LLM access layer of the TuringLambdaAI product family: one
+Switchboard is the LLM access layer of the TurLamAI product family: one
 chat/tool/embedding surface in front of hosted model APIs. It is not an agent
 framework, a prompt library, a vector store, or a retry/backoff engine. Those
 live above it.

@@ -1,7 +1,7 @@
 #lang scribble/manual
 
 @title{Switchboard}
-@author{TuringLambdaAI}
+@author{TurLamAI}
 
 Public module: @tt{switchboard}
 

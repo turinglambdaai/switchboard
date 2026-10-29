@@ -2,7 +2,7 @@
 
 **一次调用，接通所有模型——chat、工具调用与 embeddings 的统一 Racket API。**
 
-[![CI](https://github.com/turinglambdaai/switchboard/actions/workflows/ci.yml/badge.svg)](https://github.com/turinglambdaai/switchboard/actions/workflows/ci.yml) ![Racket](https://img.shields.io/badge/Racket-9F1D20?logo=racket&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![CI](https://github.com/turlamai/switchboard/actions/workflows/ci.yml/badge.svg)](https://github.com/turlamai/switchboard/actions/workflows/ci.yml) ![Racket](https://img.shields.io/badge/Racket-9F1D20?logo=racket&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 **[English](README.md) · 中文**
 
