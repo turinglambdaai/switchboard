@@ -2,7 +2,7 @@
 
 **One call, every provider — chat, tools, and embeddings behind a single Racket API.**
 
-[![CI](https://github.com/turinglambdaai/switchboard/actions/workflows/ci.yml/badge.svg)](https://github.com/turinglambdaai/switchboard/actions/workflows/ci.yml) ![Racket](https://img.shields.io/badge/Racket-9F1D20?logo=racket&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![CI](https://github.com/turlamai/switchboard/actions/workflows/ci.yml/badge.svg)](https://github.com/turlamai/switchboard/actions/workflows/ci.yml) ![Racket](https://img.shields.io/badge/Racket-9F1D20?logo=racket&logoColor=white) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 **English** · [中文](README.zh-CN.md)
 
